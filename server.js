@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import mysql from 'mysql2'
 import expressLayouts from 'express-ejs-layouts'
+import argon2 from 'argon2'
 
 
 
@@ -14,9 +15,9 @@ app.use(expressLayouts);
 
 
 const pool = mysql.createPool({
-  host:'database-2.cvi4w82eqauk.us-east-1.rds.amazonaws.com', 
+  host:, 
   user:'admin', 
-  password:'EugeniaCooney1*', 
+  password:, 
   database:'superbowl'
 }).promise()
 
@@ -31,6 +32,7 @@ app.use((err, req, res, next) => {
 app.listen(3000, () => {
   console.log('Server is running on port 3000')
 })
+
 
 
 
@@ -177,6 +179,9 @@ npm i mongoose
 git init p
 npm run devStart
 npm i passport
+npm i body-parser
+npm install -g node-gyp
+npm i argon2
 
 
 git remote add origin https://github.com/Devastati0n/full.git
